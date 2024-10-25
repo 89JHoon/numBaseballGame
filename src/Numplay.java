@@ -34,6 +34,13 @@ public class Numplay extends GameRule {
                     answerNum = Integer.parseInt(strAnswerNum);
 
 
+
+
+
+
+
+
+
                 } else {
                     input = false;
                     System.out.println("숫자를 입력해 주세요");
