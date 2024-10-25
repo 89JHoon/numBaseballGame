@@ -64,7 +64,7 @@ public class Numplay extends GameRule {
             System.out.println(tryCount +"차 시도 "+ answer);
             System.out.println(strike + " 스트라이크 " + ball + " 볼");
         }
-        System.out.println("정답입니다.");
+        System.out.println("정답입니다.("+tryCount+"차)");
 
 
     }
