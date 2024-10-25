@@ -11,8 +11,8 @@ public class Numplay extends GameRule {
         //set >> List
         List<Integer> shuffleNum = new ArrayList<>(treeNum);
         Collections.shuffle(shuffleNum);
-        int a = (shuffleNum.get(0) * 100) + (shuffleNum.get(1) * 10) + shuffleNum.get(2);
-        System.out.println(a + " " + shuffleNum);
+        int correctNum = (shuffleNum.get(0) * 100) + (shuffleNum.get(1) * 10) + shuffleNum.get(2);
+        System.out.println(correctNum + " " + shuffleNum);
         System.out.println("숫자를 입력해 주세요");
 
 
@@ -23,32 +23,20 @@ public class Numplay extends GameRule {
         boolean input = true;
         int tryCount = 0;
 
-        while (a != answerNum) {
+        while (correctNum != answerNum) {
             Scanner sc = new Scanner(System.in);
             strAnswerNum = sc.nextLine();
             tryCount++;
-            System.out.println(strAnswerNum);
             for (int i = 0; i < strAnswerNum.length(); i++) {
                 tmp = strAnswerNum.charAt(i);
                 if ('0' <= tmp && tmp <= '9') {
                     input = true;
                     answerNum = Integer.parseInt(strAnswerNum);
-
-
-
-
-
-
-
-
-
                 } else {
                     input = false;
                     System.out.println("숫자를 입력해 주세요");
                 }
             }
-
-
             int num1 = answerNum / 100;
             int num2 = (answerNum - num1 * 100) / 10;
             int num3 = answerNum % 10;
@@ -58,13 +46,6 @@ public class Numplay extends GameRule {
             answer.add(num2);
             answer.add(num3);
 
-
-
-            System.out.println("문제");
-            System.out.println(shuffleNum);
-
-            System.out.println("답변");
-            System.out.println(answer);
 
             int strike = 0;
             int ball = 0;
@@ -79,15 +60,10 @@ public class Numplay extends GameRule {
                         }
                     }
                 }
-
-
             }
-            System.out.println(tryCount+" 차 시도");
+            System.out.println(tryCount +"차 시도 "+ answer);
             System.out.println(strike + " 스트라이크 " + ball + " 볼");
-
-
         }
-
         System.out.println("정답입니다.");
 
 
