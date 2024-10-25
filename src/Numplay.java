@@ -57,6 +57,8 @@ public class Numplay extends GameRule {
             answer.add(num2);
             answer.add(num3);
 
+
+
             System.out.println("문제");
             System.out.println(shuffleNum);
 
